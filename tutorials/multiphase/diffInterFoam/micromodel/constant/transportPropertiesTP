@@ -1,0 +1,38 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2106                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      transportProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+phases (water oil);
+water
+{
+	transportModel  Newtonian;
+	nu              nu [ 0 2 -1 0 0 0 0 ] Visc1;
+	rho             rho [ 1 -3 0 0 0 0 0 ] rho1;
+}
+
+
+oil
+{
+    transportModel  Newtonian;
+    nu              nu [ 0 2 -1 0 0 0 0 ] Visc2;
+    rho             rho [ 1 -3 0 0 0 0 0 ] rho2;
+}
+
+sigma        sigma [ 1 0 -2 0 0 0 0 ]   ift;
+
+eps eps [0 1 0 0 0 0 0] thick;
+
+mob mob [0 2 -1 0 0 0 0 ] mobi;
+

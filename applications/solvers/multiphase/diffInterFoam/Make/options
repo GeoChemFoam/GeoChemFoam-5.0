@@ -1,0 +1,27 @@
+EXE_INC = \
+    -I../phaseField \
+    -I$(LIB_SRC)/finiteVolume/lnInclude \
+    -I$(LIB_SRC)/meshTools/lnInclude \
+    -I$(LIB_SRC)/sampling/lnInclude \
+    -I$(LIB_SRC)/dynamicFvMesh/lnInclude \
+    -I$(LIB_SRC)/transportModels \
+    -I$(GCFOAM_SRC)/transportModels/incompressible/lnInclude \
+    -I$(GCFOAM_SRC)/transportModels/interfaceProperties/lnInclude \
+    -I$(GCFOAM_SRC)/transportModels/twoPhasePhaseFieldMixture/lnInclude \
+    -I$(LIB_SRC)/TurbulenceModels/turbulenceModels/lnInclude \
+    -I$(LIB_SRC)/TurbulenceModels/incompressible/lnInclude \
+    -I$(GCFOAM_SRC)/transportModels/immiscibleIncompressibleTwoPhasePhaseFieldMixture/lnInclude
+
+EXE_LIBS = \
+    -L$(GCFOAM_LIBBIN) \
+    -lfiniteVolume \
+    -lfvOptions \
+    -lmeshTools \
+    -lsampling \
+    -ldynamicFvMesh \
+    -lincompressibleTransportModels \
+    -linterfacePropertiesGCFOAM \
+    -limmiscibleIncompressibleTwoPhasePhaseFieldMixture \
+    -lturbulenceModels \
+    -lincompressibleTurbulenceModels \
+    -lwaveModels

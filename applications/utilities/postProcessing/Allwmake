@@ -1,0 +1,21 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # run from this directory
+makeType=${1:-libso}
+set -x
+
+wmake processPoroPerm
+wmake processPoroSurf
+wmake processConcentration
+wmake processMaxVelocity
+wmake processPhaseConcentration
+wmake processInterfaceTransfer
+wmake processSaturation
+wmake processMeshCellCenters
+wmake processSolidArea
+wmake processHeatTransfer
+wmake processRelPerm
+wmake processRelPermPF
+wmake processSpeciesTransfer
+wmake processFF
+
+# ----------------------------------------------------------------- end-of-file

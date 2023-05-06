@@ -1,0 +1,3 @@
+processRelPermPF.C
+
+EXE = $(GCFOAM_APPBIN)/processRelPermPF

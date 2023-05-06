@@ -1,0 +1,10 @@
+#!/bin/bash
+cd ${0%/*} || exit 1
+
+wclean libso twoPhaseProperties
+wclean libso interfaceProperties
+wclean libso immiscibleIncompressibleTwoPhaseMixture
+wclean libso twoPhasePhaseFieldMixture
+wclean libso incompressible
+wclean libso immiscibleIncompressibleTwoPhasePhaseFieldMixture
+

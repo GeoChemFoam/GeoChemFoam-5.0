@@ -1,0 +1,48 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2106                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      thermoPhysicalProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+solutionSpecies
+{
+   C 
+   {
+      D    D  [0 2 -1 0 0 0 0] Diff;
+   }
+
+
+}
+
+kineticPhases
+{
+}
+
+kineticPhaseReactions
+{
+  calcite
+  {
+      species
+      {
+          C
+          {
+              scoeff s_coeff;
+              ki ki [0 1 -1 0 0 0 0] k_reac;
+          }
+      }
+      k0 k0 [0 -2 -1 0 1 0 0] 0;
+  }
+}
+
+// ************************************************************************* //

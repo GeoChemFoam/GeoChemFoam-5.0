@@ -1,0 +1,12 @@
+EXE_INC = \
+    -I.. \
+    -I../twoPhasePhaseFieldMixture/lnInclude \
+    -I$(LIB_SRC)/transportModels \
+    -I$(LIB_SRC)/transportModels/incompressible\lnInclude \
+    -I$(LIB_SRC)/finiteVolume/lnInclude \
+    -I$(LIB_SRC)/meshTools/lnInclude
+
+LIB_LIBS = \
+    -L$(GCFOAM_LIBBIN) \
+    -ltwoPhasePhaseFieldMixture \
+    -lfiniteVolume

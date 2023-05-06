@@ -1,0 +1,4 @@
+Size: 536 300 40
+res 5 mum
+pore=255
+solid=0

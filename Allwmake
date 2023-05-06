@@ -1,0 +1,5 @@
+#!/bin/sh
+ThirdParty/Allwmake
+src/Allwmake
+applications/Allwmake
+# ----------------------------------------------------------------- end-of-file

@@ -1,0 +1,42 @@
+wmake libso src
+wmake libso reactionThermo
+wmake libso fvMotionSolver
+wmake libso finiteVolume
+wmake libso meshTools
+wmake libso interfaceProperties
+wmake libso twoPhaseProperties
+wmake libso immiscibleIncompressibleTwoPhaseMixture
+wmake libso twoPhasePhaseFieldMixture
+wmake libso incompressible
+wmake libso immiscibleIncompressibleTwoPhasePhaseFieldMixture
+wmake scalarTransportDBSFoam
+wmake laplacianFoam
+wmake multiSpeciesTransportFoam
+wmake reactiveTransportFoam
+wmake reactiveTransportALEFoam
+wmake reactiveTransportDBSFoam
+wmake interFoam
+wmake interOSFoam
+wmake diffInterFoam
+wmake interTransportFoam
+wmake interTransferFoam
+wmake interReactiveTransportFoam
+wmake interReactiveTransferFoam
+wmake simpleDBSFoam
+wmake heatTransportFoam
+wmake processPoroPerm
+wmake processPoroSurf
+wmake processConcentration
+wmake processMaxVelocity
+wmake processPhaseConcentration
+wmake processInterfaceTransfer
+wmake processSaturation
+wmake processMeshCellCenters
+wmake processSolidArea
+wmake processHeatTransfer
+wmake processRelPerm
+wmake processRelPermPF
+wmake processSpeciesTransfer
+wmake processFF
+wmake smoothSolidSurface
+wmake mapFields

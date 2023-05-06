@@ -1,0 +1,31 @@
+FoamFile
+{
+version     4.0;
+format      ascii;
+class       dictionary;
+location    "system";
+object      postProcessDict;
+}
+
+x1 .00450;
+x2 .01350;
+
+y1 .00090;
+y2 .01710;
+
+z1 0;
+z2 .00015;
+
+direction 0;
+
+velocity volumeAveraged;
+
+pressureDrop velocityWeightedAverageViscousForce;//Gradient;
+
+
+inletName inlet;
+
+outletName outlet;
+
+nSatPoints 10;
+offset 1;

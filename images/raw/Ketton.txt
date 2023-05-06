@@ -1,0 +1,4 @@
+Size: 512 512 512
+res 5.3 mum
+pore=255
+solid=0

@@ -1,0 +1,3 @@
+scalarTransportDBSFoam.C
+
+EXE = $(GCFOAM_APPBIN)/scalarTransportDBSFoam

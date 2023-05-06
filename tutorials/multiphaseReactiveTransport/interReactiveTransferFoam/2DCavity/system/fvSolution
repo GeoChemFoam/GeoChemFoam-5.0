@@ -1,0 +1,155 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2106                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      fvSolution;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+solvers
+{
+    alpha.water
+    {
+        nAlphaCorr      1;
+        nAlphaSubCycles 1;
+        cAlpha          1.0;
+    }
+
+    Yi 
+    {
+        cYi             1.0;  
+
+        solver          PBiCGStab;
+        preconditioner  DILU;
+        tolerance       1e-07;
+        relTol          0;
+    }
+    
+
+    YiFinal
+    {
+        $Yi
+    }
+    CO2
+    {
+       $Yi
+    }
+    H+
+    {
+       $Yi
+    }
+    OH-
+    {
+       $Yi
+    }
+    HCO3-
+    {
+       $Yi
+    }
+    CO3-2
+    {
+       $Yi
+    }
+
+    "pcorr.*"
+    {
+        solver          GAMG;
+        tolerance       1e-8;
+        relTol          0.00001;
+        smoother        GaussSeidel;
+        nPreSweeps      0;
+        nPostSweeps     2;
+        nFinestSweeps   2;
+        cacheAgglomeration on;
+        nCellsInCoarsestLevel 20;
+        agglomerator    faceAreaPair;
+        mergeLevels     1;
+    }
+
+    p_rgh
+    {
+        solver          GAMG;
+        tolerance       1e-7;
+        relTol          0.01;
+        smoother        GaussSeidel;
+        nPreSweeps      0;
+        nPostSweeps     2;
+        nFinestSweeps   2;
+        cacheAgglomeration on;
+        nCellsInCoarsestLevel 20;
+        agglomerator    faceAreaPair;
+        mergeLevels     1;
+    }
+
+    p_rghFinal
+    {
+        $p_rgh;
+        tolerance       1e-7;
+        relTol          0;
+    }
+
+    pc
+    {
+        solver          GAMG;
+        tolerance       1e-7;
+        relTol          0.01;
+        smoother        GaussSeidel;
+        nPreSweeps      0;
+        nPostSweeps     2;
+        nFinestSweeps   2;
+        cacheAgglomeration on;
+        nCellsInCoarsestLevel 20;
+        agglomerator    faceAreaPair;
+        mergeLevels     1;
+    }
+
+    pcFinal
+    {
+       $pc;
+    }
+
+    U
+    {
+        solver          BiCGStab;
+        preconditioner  DILU;
+        tolerance       1e-07;
+        relTol          0;
+    }
+}
+
+PIMPLE
+{
+    pRefCell 0;
+    pRefValue 0;
+    pdRefCell 0;
+    pdRefValue 0;
+    pcRefCell 0;
+    pcRefValue 0;
+    cSK 0;
+    nSK 0;
+    cPc  0; 
+
+    momentumPredictor no;
+    nCorrectors     3;
+    nOuterCorrectors    1;
+    nNonOrthogonalCorrectors 0;
+    nAlphaCorr      1;
+    nAlphaSubCycles 1;
+}
+ 
+
+SIMPLE
+{
+    nNonOrthogonalCorrectors 0;
+}
+
+// ************************************************************************* //

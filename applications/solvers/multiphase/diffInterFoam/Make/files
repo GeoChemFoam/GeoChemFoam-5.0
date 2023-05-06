@@ -1,0 +1,3 @@
+diffInterFoam.C
+
+EXE = $(GCFOAM_APPBIN)/diffInterFoam

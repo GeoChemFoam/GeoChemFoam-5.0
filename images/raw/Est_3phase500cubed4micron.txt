@@ -1,0 +1,5 @@
+Size: 500 500 500
+res 4 mum
+pore=1
+solid=3
+micropores=2

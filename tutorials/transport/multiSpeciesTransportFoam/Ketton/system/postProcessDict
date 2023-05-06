@@ -1,0 +1,27 @@
+FoamFile
+{
+version     4.0;
+format      ascii;
+class       dictionary;
+location    "system";
+object      postProcessDict;
+}
+
+x1 0;
+x2 .0015900;
+
+y1 0;
+y2 .0015900;
+
+z1 0;
+z2 .0015900;
+
+direction 0;
+
+velocity inlet;
+
+pressureDrop direct;
+
+inletName inlet;
+
+outletName outlet;

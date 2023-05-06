@@ -1,0 +1,6 @@
+#!/bin/bash
+cd ${0%/*} || exit 1
+
+ThirdParty/Allwclean
+src/Allwclean
+applications/Allwclean

@@ -1,0 +1,24 @@
+FoamFile
+{
+version     4.0;
+format      ascii;
+class       dictionary;
+location    "system";
+object      postProcessDict;
+}
+
+direction 0;
+
+x1 0;
+x2 .0011400;
+
+y1 0;
+y2 .0011400;
+
+z1 0;
+z2 .0011400;
+
+gradient direct;
+
+inletName inlet;
+outletName outlet;

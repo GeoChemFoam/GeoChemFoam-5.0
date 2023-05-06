@@ -1,0 +1,3 @@
+incompressibleTwoPhasePhaseFieldMixture/incompressibleTwoPhasePhaseFieldMixture.C
+
+LIB = $(GCFOAM_LIBBIN)/libincompressibleTwoPhasePhaseFieldMixture

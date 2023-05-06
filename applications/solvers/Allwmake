@@ -1,0 +1,12 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # run from this directory
+
+basic/Allwmake
+transport/Allwmake
+reactiveTransport/Allwmake
+multiphase/Allwmake
+multiphaseTransport/Allwmake
+multiphaseReactiveTransport/Allwmake
+incompressible/Allwmake
+heatTransfer/Allwmake
+# ----------------------------------------------------------------- end-of-file

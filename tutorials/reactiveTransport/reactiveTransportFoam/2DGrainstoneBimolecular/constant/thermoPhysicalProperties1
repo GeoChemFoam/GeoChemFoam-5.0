@@ -1,0 +1,42 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2106                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      thermoPhysicalProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+solutionSpecies
+{
+	A
+	{
+		D D [ 0 2 -1 0 0 0 0 ] DiffA;
+	}
+	B
+	{
+		D D [ 0 2 -1 0 0 0 0 ] DiffB;
+	}
+	AB
+	{
+		D D [ 0 2 -1 0 0 0 0 ] DiffAB;
+	}
+};
+
+surfaceSpecies
+{
+};
+
+surfaceMasters
+{
+};
+
+// ************************************************************************* //

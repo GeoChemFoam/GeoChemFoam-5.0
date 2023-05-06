@@ -1,0 +1,3 @@
+processDispersion.C
+
+EXE = $(GCFOAM_APPBIN)/processDispersion

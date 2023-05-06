@@ -1,0 +1,3 @@
+heatTransportFoam.C
+
+EXE = $(GCFOAM_APPBIN)/heatTransportFoam

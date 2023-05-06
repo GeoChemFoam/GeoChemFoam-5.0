@@ -1,0 +1,44 @@
+# .bashrc
+
+# Change according to your GeoChemFoam installation directory
+GCFOAM_DIR=$HOME/works/GeoChemFoam-5.0
+GCFOAM_SRC=$GCFOAM_DIR/src
+GCFOAM_APPBIN=$GCFOAM_DIR/bin
+GCFOAM_LIBBIN=$GCFOAM_DIR/lib
+GCFOAM_TUTORIALS=$GCFOAM_DIR/tutorials
+GCFOAM_IMG=$GCFOAM_DIR/images
+GCFOAM_RUNS=$GCFOAM_DIR/runs
+
+# Change according to your openfoam installation directory
+export FOAM_INST_DIR=/usr/lib/openfoam
+source /usr/lib/openfoam/openfoam2212/etc/bashrc
+#export FOAM_INST_DIR=$HOME/OpenFOAM
+#source $HOME/OpenFOAM/OpenFOAM-v2106/etc/bashrc
+#export FOAM_INST_DIR=/opt/OpenFOAM
+#source /opt/OpenFOAM/OpenFOAM-v2106/etc/bashrc
+
+export GCFOAM_DIR
+export GCFOAM_SRC
+export GCFOAM_APPBIN
+export GCFOAM_LIBBIN
+export GCFOAM_TUTORIALS
+export GCFOAM_IMG
+export GCFOAM_RUNS
+
+alias run='cd $GCFOAM_RUNS'
+
+
+
+export PATH=$PATH:$GCFOAM_APPBIN
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$GCFOAM_LIBBIN
+
+export PATH=$PATH:$MPI_ARCH_PATH/include
+
+#Third party software
+source $GCFOAM_DIR/ThirdParty/bashrc
+
+alias dir='cd $GCFOAM_DIR'
+alias src='cd $GCFOAM_DIR/src'
+alias app='cd $GCFOAM_DIR/applications'
+alias tut='cd $GCFOAM_DIR/tutorials'
+

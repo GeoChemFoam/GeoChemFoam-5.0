@@ -1,0 +1,3 @@
+laplacianFoam.C
+
+EXE = $(GCFOAM_APPBIN)/laplacianGCFoam
