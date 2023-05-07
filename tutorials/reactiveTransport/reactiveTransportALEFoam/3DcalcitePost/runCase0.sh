@@ -40,4 +40,4 @@ else
     rm -rf 1e-06 
 fi
 
-echo -e "Fields have been initialised."
+echo -e "Note: Please check the last line of reactiveTransportALEFoam0.out to confirm the equation have converged. If it has not, re-run script and/or change the tolerance and residual controls in system/fvSolution" 

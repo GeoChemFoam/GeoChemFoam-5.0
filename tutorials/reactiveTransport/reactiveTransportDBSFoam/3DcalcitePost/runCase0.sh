@@ -30,6 +30,6 @@ else
     rm -rf 1e-06
 fi
 
-echo -e "Note: Please check the last line of reactiveTransportDBSFoam0.out to confirm the equation have converged. If it has not, use restartCase0.sh to restart the case and/or change the tolerance and residual controls in system/fvSolution" 
+echo -e "Note: Please check the last line of reactiveTransportDBSFoam0.out to confirm the equation have converged. If it has not, re-run script and/or change the tolerance and residual controls in system/fvSolution" 
 
 

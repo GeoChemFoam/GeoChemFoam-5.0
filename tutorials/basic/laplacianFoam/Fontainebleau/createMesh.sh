@@ -131,7 +131,7 @@ fi
 
 rm -rf constant/triSurface
 
-echo -e "Mesh created. It is advised to check in paraview to confirm mesh and 0/eps are reasonable before running flow"
+echo -e "Mesh created. It is advised to check in paraview to confirm mesh and 0/eps are reasonable before the next step"
 
 
 
