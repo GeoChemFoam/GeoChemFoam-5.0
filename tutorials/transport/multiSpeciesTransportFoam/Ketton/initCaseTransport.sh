@@ -13,9 +13,6 @@ Species=('A' 'B')
 ## Eg for water vapor in air this would be 2.42e-5, for CO2(aq) in water this would be 3e-9
 Diff=('2.42e-5' '2.42e-7')
 
-## Number of processor
-NP=8
-
 #### END OF USER INPUT #######################################################
 
 python system/createThermoPhysicalProperties.py --Species ${Species[@]} --Diff ${Diff[@]}
