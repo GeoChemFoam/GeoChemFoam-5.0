@@ -104,11 +104,13 @@ then
     tranY=$(expr -1*$y_min | bc)
     tranZ=$(expr -1*$z_min | bc)
     vector="($tranX $tranY $tranZ)"
-    surfaceTransformPoints -translate "$vector" Image_meshed.stl Image_meshed.stl > ../../surfaceTransformPoints.out
+    surfaceTransformPoints -translate "$vector" Image_meshed.stl Image_meshed.stl > ../../surfaceTransformPoints1.out
+    vector="($res $res $res)"
+    surfaceTransformPoints -scale "$vector" Image_meshed.stl Image_meshed.stl > ../../surfaceTransformPoints2.out
 
-    pore_index_0=$(expr $pore_index_X-1*$x_min | bc)
-    pore_index_1=$(expr $pore_index_Y-1*$y_min | bc)
-    pore_index_2=$(expr $pore_index_Z-1*$x_min | bc)
+    pore_index_0=$(expr $res*$pore_index_X-$res*$x_min | bc)
+    pore_index_1=$(expr $res*$pore_index_Y-$res*$y_min | bc)
+    pore_index_2=$(expr $res*$pore_index_Z-$res*$x_min | bc)
 fi
 
 echo -e "Coordinates at center of a pore = ($pore_index_0,$pore_index_1,$pore_index_2)" 
