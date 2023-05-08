@@ -2,7 +2,7 @@
 
 ###### USERS INPUT ############################################################
 
-## Define your pressure drop at the inlet (Pa)
+## Define your pressure drop at the inlet (Pa/m)
 PGRAD=100000
 
 ## Define the kinematic viscocity of the fluid (m^2/s)
