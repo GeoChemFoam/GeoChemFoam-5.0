@@ -2,7 +2,7 @@
 ###### USERS INPUT ############################################################
 
 ## Define the total number of iterations of the simulation and how often to output
-TotalTime=0.0006
+TotalTime=0.00024
 runTimestep=4e-5
 
 ### OS time-steping parameters ###
