@@ -19,7 +19,7 @@ compressed='yes'
 #y_dim=2000
 #z_dim=10
 
-#if format='raw', Values of solid, pore, and minimum porosity value for the solid phase (note: this CANNOT be 0)
+#if format='raw', Values of solid and pore
 #pores_value=255
 #solid_value=0
 

@@ -19,7 +19,7 @@ x_dim=500
 y_dim=500
 z_dim=1
 
-#Values of solid, pore, and minimum porosity value for the solid phase (note: this CANNOT be 0)
+#Values of solid, pore, and minimum porosity value for the solid phase (note: if the image contains solid voxel, this CANNOT be 0)
 pores_value=255
 solid_value=0
 eps_min=0

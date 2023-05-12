@@ -19,7 +19,7 @@ x_dim=500
 y_dim=500
 z_dim=500
 
-#Values of solid, pore, and minimum porosity value for the solid phase (note: this CANNOT be 0) 
+#Values of solid, pore, and minimum porosity value for the solid phase 
 pores_value=1
 solid_value=3
 
