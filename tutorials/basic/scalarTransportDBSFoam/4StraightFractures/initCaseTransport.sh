@@ -2,7 +2,7 @@
 
 ###### USERS INPUT ############################################################
 
-#fluid properties
+#Diffusion coefficient (m^2/s)
 Diff=1e-9
 
 #### END OF USER INPUT #######################################################

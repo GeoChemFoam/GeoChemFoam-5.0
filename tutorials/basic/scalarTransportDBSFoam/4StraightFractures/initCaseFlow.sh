@@ -2,7 +2,7 @@
 
 ###### USERS INPUT ############################################################
 
-#Define flow rate
+#Define pressure drop
 PDROP=0.00005
 
 #fluid properties
