@@ -1,5 +1,5 @@
 EXE_INC = \
--fopenmp -DUSE_OPENMP
+-fopenmp -DUSE_OPENMP -w
 
 LIB_LIBS = \
 
