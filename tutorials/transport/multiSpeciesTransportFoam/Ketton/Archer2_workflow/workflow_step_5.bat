@@ -16,9 +16,9 @@ export OMP_NUM_THREADS=1
 # Propagate the cpus-per-task setting from script to srun commands
 export SRUN_CPUS_PER_TASK=$SLURM_CPUS_PER_TASK
 
-# Configure GCF
-module load openfoam/com/v2212
-source /work/ecseaj02/ecseaj02/gavingcf/works/GeoChemFoam-5.0/etc/bashrc
+# Configure GCF using Archer2 module
+module load gcfoam/5.0
+source $GCFOAM_DIR/etc/bashrc_archer2
 
 # Configure Python
 module load cray-python
@@ -37,7 +37,6 @@ if [ "$NP" -ne "$((SLURM_TASKS_PER_NODE*SLURM_JOB_NUM_NODES))" ]; then
 fi
 echo -e "Run job_name in parallel on $NP processors"
 
-# processFlow needs time=0:20:0
 ./processFlow.sh 
 
 sbatch workflow_step_6.bat
