@@ -14,6 +14,7 @@
 export OMP_NUM_THREADS=1
 
 # Configure GCF using Archer2 module
+module load other-software
 module load gcfoam/5.0
 source $GCFOAM_DIR/etc/bashrc_archer2
 
