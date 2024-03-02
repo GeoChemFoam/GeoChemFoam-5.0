@@ -13,25 +13,17 @@
 # Set the number of threads to 1 to avoid auto-threading
 export OMP_NUM_THREADS=1
 
-# Configure GCF using own installation
-#module load openfoam/com/v2212
-#source /work/ecseaj02/ecseaj02/gavingcf/works/GeoChemFoam-5.0/etc/bashrc
-
 # Configure GCF using Archer2 module
+module load other-software
 module load gcfoam/5.0
-source $FOAM_INSTALL_DIR/etc/bashrc
-source $GCFOAM_DIR/ThirdParty/bashrc
+source $GCFOAM_DIR/etc/bashrc_archer2
 
 # Configure Python
 module load cray-python
 source /work/ecseaj02/ecseaj02/gavingcf/myvenv/bin/activate
 
-# createMesh needs time=0:20:0
+# Choose just one of the following serial scripts
 ./createMesh.sh  
-
-# initCaseFlow needs time=1:00:0
 #./initCaseFlow.sh  
-
-# initCaseTransport needs time=0:20:0
 #./initCaseTransport.sh 
 
