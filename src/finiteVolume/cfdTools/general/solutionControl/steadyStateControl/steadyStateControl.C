@@ -56,10 +56,10 @@ bool Foam::steadyStateControl::criteriaSatisfied()
         const word& fieldName = solverPerfDictEntry.keyword();
         label fieldi = applyToField(fieldName);
        
- 		if (fieldi == -1)
-		{
+        if (fieldi == -1)
+        {
             forAll(residualControl_, i)
-		    {
+            {
                 if (residualControl_[i].name == fieldName)
                 {
                     fieldi = i;
@@ -143,8 +143,6 @@ bool Foam::steadyStateControl::loop()
     solutionControl::setFirstIterFlag(true, true);
 
     read();
-
-    Time& runTime = const_cast<Time&>(mesh_.time());
 
     if (initialised_)
     {
