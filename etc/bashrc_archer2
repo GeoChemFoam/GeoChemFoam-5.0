@@ -1,0 +1,13 @@
+# .bashrc
+
+source $FOAM_INSTALL_DIR/etc/bashrc
+source $GCFOAM_DIR/ThirdParty/bashrc
+
+# edit the line below which sets GCFOAM_RUNS,
+# replacing y23 with your project code
+# and replace gavingcf with your username
+
+#export GCFOAM_RUNS=/work/y23/y23/gavingcf/works/GeoChemFoam-5.0/runs
+export GCFOAM_RUNS=/work/ecseaj02/ecseaj02/gavingcf/works/GeoChemFoam-5.0/runs
+
+
