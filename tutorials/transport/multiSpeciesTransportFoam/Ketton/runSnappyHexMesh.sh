@@ -10,7 +10,12 @@ then
     export NP="$(find processor* -maxdepth 0 -type d -print| wc -l)"
 
     echo -e "Run snappyHexMesh in parallel on $NP processors"
-    mpirun -np $NP snappyHexMesh -overwrite -parallel  > snappyHexMesh.out
+# if PLATFORM is ARCHER2 then use srun, otherwise use mpirun
+    if [[ "${PLATFORM}" == "ARCHER2" ]]; then
+       srun --distribution=block:block --hint=nomultithread -n $NP snappyHexMesh -overwrite -parallel  > snappyHexMesh.out
+    else
+       mpirun -np $NP snappyHexMesh -overwrite -parallel  > snappyHexMesh.out
+    fi
 else
     echo "Run snappyHexMesh"
     snappyHexMesh -overwrite > snappyHexMesh.out

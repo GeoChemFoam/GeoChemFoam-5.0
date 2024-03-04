@@ -15,7 +15,12 @@ then
     export NP="$(find processor* -maxdepth 0 -type d -print| wc -l)"
     # Run simpleFoam in parallel
     echo -e "Run simpleFoam in parallel on $NP processors"
-    mpirun -np $NP simpleFoam -parallel  > simpleFoamFlow.out
+    # if PLATFORM is ARCHER2 then use srun, otherwise use mpirun
+    if [[ "${PLATFORM}" == "ARCHER2" ]]; then
+       srun --distribution=block:block --hint=nomultithread -n $NP simpleFoam -parallel  > simpleFoamFlow.out
+    else
+       mpirun -np $NP simpleFoam -parallel  > simpleFoamFlow.out
+    fi
 else
     echo -e "Run simpleFoam"
     simpleFoam > simpleFoamFlow.out

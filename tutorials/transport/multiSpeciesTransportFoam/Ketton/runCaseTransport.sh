@@ -21,7 +21,12 @@ then
     export NP="$(find processor* -maxdepth 0 -type d -print| wc -l)"
     # Run multiSpeciesTransportFoam in parallel
     echo -e "Run multiSpeciesTransportFoam in parallel on $NP processors"
-    mpirun -np $NP multiSpeciesTransportFoam -parallel  > multiSpeciesTransport.out
+# if PLATFORM is ARCHER2 then use srun, otherwise use mpirun
+    if [[ "${PLATFORM}" == "ARCHER2" ]]; then
+       srun --distribution=block:block --hint=nomultithread -n $NP multiSpeciesTransportFoam -parallel  > multiSpeciesTransport.out
+    else
+       mpirun -np $NP multiSpeciesTransportFoam -parallel  > multiSpeciesTransport.out
+    fi
 else
     #Run multiSpeciesTransportFoam
     echo -e "Run multiSpeciesTransportFoam"
