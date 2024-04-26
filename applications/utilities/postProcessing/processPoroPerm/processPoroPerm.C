@@ -347,6 +347,14 @@ int main(int argc, char *argv[])
 		poro = eps.weightedAverage(clip).value()*vol/(x2-x1)/(y2-y1)/(z2-z1);
 
                 perm = UD*nu.value()/(dpdz+1e-30);
+
+                if (perm<0)
+                {
+                   Info<< "negative permeability - did the velocity field converge?"
+                       << endl
+                       << abort(FatalError);
+                
+                }
                 //scalar perm = -Uavg*vol/(x2-x1)/(y2-y1)/(z2-z1)*nu.value()/(dpdz+1e-30); 
 		scalar Lpore = std::sqrt(8*perm/poro);
 		scalar Re = UD/poro*Lpore/nu.value();

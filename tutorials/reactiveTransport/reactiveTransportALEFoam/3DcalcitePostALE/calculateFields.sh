@@ -20,7 +20,7 @@ then
     decomposePar -fields  > decomposePar0.out
 
     echo "map fields to new mesh in parallel on $NP processors"
-    mpiexec -np $NP mapFieldsPar ../3DcalcitePost -case ../temp -sourceTime latestTime -parallel > mapFields.out
+    mpiexec -np $NP mapFieldsPar ../3DcalcitePostALE -case ../temp -sourceTime latestTime -parallel > mapFields.out
 
     for i in processor*; do mv $i/0/pointMotionU* $i/0/pointMotionU; done
 
@@ -44,7 +44,7 @@ else
     cp -r 0_org 0
 
     echo "map fields to new mesh"
-    mapFieldsGC ../3DcalcitePost -case ../temp -sourceTime latestTime > mapFields.out
+    mapFieldsGC ../3DcalcitePostALE -case ../temp -sourceTime latestTime > mapFields.out
     mv 0/pointMotionU* 0/pointMotionU
 
     echo "run reactiveTransportALEFoam for 1e-06 second" 
