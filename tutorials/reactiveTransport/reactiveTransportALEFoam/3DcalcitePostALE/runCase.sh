@@ -110,7 +110,7 @@ while b<round($TotalTime,13):
     print('Remesh')
     os.system( './remesh.sh') 
     os.system('./calculateFields.sh')
-    os.system('cd ../3DcalcitePost')
+    os.system('cd ../3DcalcitePostALE')
     os.system('rm -rf processor*/'+s)
     os.system('rm -rf '+s)
     if $NP>1:

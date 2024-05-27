@@ -21,7 +21,7 @@ echo -e "Remove internal faces"
 
 echo -e "Create stl"
 surfaceMeshExtract -latestTime -patches '(movingWalls)' constant/triSurface/Image_meshed.stl > surfaceMeshExtract.out
-cp constant/triSurface/Image_meshed.stl ../3DcalcitePost/constant/triSurface/Image_meshed.stl
+cp constant/triSurface/Image_meshed.stl ../3DcalcitePostALE/constant/triSurface/Image_meshed.stl
 rm -rf 0 0.* *e-* [1-9]*
 rm -f *.out
 rm -rf processor*

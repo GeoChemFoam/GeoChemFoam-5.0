@@ -111,7 +111,7 @@ then
 
     pore_index_0=$(expr $res*$pore_index_X-$res*$x_min | bc)
     pore_index_1=$(expr $res*$pore_index_Y-$res*$y_min | bc)
-    pore_index_2=$(expr $res*$pore_index_Z-$res*$x_min | bc)
+    pore_index_2=$(expr $res*$pore_index_Z-$res*$z_min | bc)
 fi
 
 echo -e "Coordinates at center of a pore = ($pore_index_0,$pore_index_1,$pore_index_2) in the cropped image"

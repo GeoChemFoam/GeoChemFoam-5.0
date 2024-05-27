@@ -4,3 +4,7 @@ cd ${0%/*} || exit 1
 ThirdParty/Allwclean
 src/Allwclean
 applications/Allwclean
+
+rm -rf bin
+rm -rf lib
+rm -rf ThirdParty/PhreeqcRM/lib
