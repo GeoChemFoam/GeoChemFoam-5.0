@@ -12,7 +12,12 @@ then
     rm -rf processor*/[1-9]*
     # Run simpleFoam in parallel
     echo -e "Run processPoroPerm in parallel on $NP processors"
-    mpirun -np $NP processPoroPerm -parallel  > processPoroPermFlow.out
+    # if PLATFORM is ARCHER2 then use srun, otherwise use mpirun
+    if [[ "${PLATFORM}" == "ARCHER2" ]]; then
+       srun --distribution=block:block --hint=nomultithread -n $NP processPoroPerm -parallel  > processPoroPermFlow.out
+    else
+       mpirun -np $NP processPoroPerm -parallel  > processPoroPermFlow.out
+    fi
 else
     rm -rf 0/*
     for j in [1-9]*; do rm -rf $j/uniform; mv $j/* 0/.; done

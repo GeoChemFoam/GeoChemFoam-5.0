@@ -13,9 +13,10 @@
 # Set the number of threads to 1 to avoid auto-threading
 export OMP_NUM_THREADS=1
 
-# Configure GCF
-module load openfoam/com/v2212
-source /work/ecseaj02/ecseaj02/gavingcf/works/GeoChemFoam-5.0/etc/bashrc
+# Configure GCF using Archer2 module
+module load other-software
+module load gcfoam/5.0
+source $GCFOAM_DIR/etc/bashrc_archer2
 
 # Configure Python
 module load cray-python
@@ -24,7 +25,6 @@ source /work/ecseaj02/ecseaj02/gavingcf/myvenv/bin/activate
 # Ensure we are in the correct working directory
 cd /work/ecseaj02/ecseaj02/gavingcf/works/GeoChemFoam-5.0/runs/Ketton
 
-# initCaseTransport needs time=0:20:0
 ./initCaseTransport.sh 
 
 sbatch workflow_step_7.bat
