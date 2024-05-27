@@ -34,8 +34,7 @@ if [ "$NP" -ne "$((SLURM_TASKS_PER_NODE*SLURM_JOB_NUM_NODES))" ]; then
      exit 1
 fi
 
-export PLATFORM=ARCHER2
-echo -e "Run job_name in parallel on $NP $PLATFORM processors"
+echo -e "Run job_name in parallel on $NP processors"
 
 # Choose just one of the following parallel scripts.
 ./runSnappyHexMesh.sh 
